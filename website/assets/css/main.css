@@ -22,6 +22,9 @@
 
     display: block;
 }
+.heder__navbar-item--has-notify:hover .header__notify{
+    display: block;
+}
 .heder__navbar-item,.heder__navbar-item-link{
     display: inline-block;
     font-size: 1.4rem;
@@ -121,12 +124,25 @@ height: 15px;
 
 
 .header__notify{
+    cursor: default;
     position: absolute;
     top: 118%;
     width: 404px;
     right: 0px;
     background-color: var(--white-color);
     border:1px solid#d3d3d3;
+    transform-origin: 90% top;
+    animation: headeNotifyGrowth ease-in 0.5s;
+    display: none;
+}
+@keyframes headeNotifyGrowth {
+    from {
+      transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+
+    }
     
 }
 .header__notify-header{
@@ -178,6 +194,7 @@ height: 15px;
     font-size: 1.4rem;
     display: block;
     color: var(--black-color);
+    line-height: 1.8rem
 }
 .header__notify-descriotion{
     
@@ -186,12 +203,17 @@ height: 15px;
     color: #756F6E;
 }
 .header__notify-footer{
-text-align: center;
+display: flex;
 
 }
 .header__notify-footer-btn{
 
+padding: 6px 16px;
     text-decoration: none;
     color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 400;
+    width: 100%;
+    text-align:  center;
     
 }
